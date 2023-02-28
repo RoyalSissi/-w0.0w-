@@ -66,6 +66,7 @@ def run():
 
 g = 0
 b = 0
+n = 0
 while True:
 	result = run()
 	if result == 200:
@@ -83,6 +84,14 @@ while True:
 		print(f"[:)] {g} GB has been successfully added to your account.")
 		print(f"[#] Total: {g} Good {b} Bad")
 		print("[*] After 18 seconds, a new request will be sent.")
+
+		n = n + 1
+		print(f"[*] total: {n}")
+		if(n == 3):
+			print("[!] Finish~~~")
+			time.sleep(3)
+			sys.exit()
+
 		time.sleep(18)
 	else:
 		b = b + 1
