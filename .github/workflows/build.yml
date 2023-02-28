@@ -1,0 +1,24 @@
+name: Run
+on: 
+  watch:
+    types: started
+  schedule:
+   - cron: '0 */1 * * *'
+jobs:
+  update:
+    name: Update
+    runs-on: ubuntu-latest
+    steps:
+      - name: check out
+        uses: actions/checkout@v3.1.0
+        
+      - name: build
+        working-directory: ${{ github.workspace }}
+        run: |
+            sudo chmod -R 777 .
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.6.0
+        with:
+          node-version: '18'
+          
