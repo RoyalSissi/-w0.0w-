@@ -87,7 +87,7 @@ while True:
 
 		n = n + 1
 		print(f"[*] total: {n}")
-		if(n == 3):
+		if(n == 10):
 			print("[!] Finish~~~")
 			time.sleep(3)
 			sys.exit()
