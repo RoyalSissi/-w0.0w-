@@ -2,8 +2,8 @@ name: Run
 on: 
   watch:
     types: started
-  schedule:
-   - cron: '0 */1 * * *'
+#   schedule:
+#    - cron: '0 */1 * * *'
 jobs:
   update:
     name: Update
@@ -12,13 +12,15 @@ jobs:
       - name: check out
         uses: actions/checkout@v3.1.0
         
-      - name: build
+      - name: chmod
         working-directory: ${{ github.workspace }}
         run: |
             sudo chmod -R 777 .
 
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v3.6.0
-        with:
-          node-version: '18'
-          
+      - name: Setup Python environment
+        uses: actions/setup-python@v4.5.0
+        
+      - name: start
+        working-directory: ${{ github.workspace }}
+        run: |
+            python main.py
