@@ -1,9 +1,9 @@
 name: Run
-on: 
-  watch:
-    types: started
-  schedule:
-   - cron: '0 */1 * * *'
+#on: 
+ # watch:
+ #   types: started
+ # schedule:
+ # - cron: '0 */1 * * *'
 jobs:
   update:
     name: Update
